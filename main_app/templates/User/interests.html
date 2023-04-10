@@ -1,0 +1,22 @@
+{% extends 'user_base.html' %}
+{% block content2 %}
+
+
+<div class="row">
+    <div class="two-thirds column user-card">
+        <h3 id="edit-interests">Current Interests</h3>
+        <a href="{% url 'edit_interest' user.id %}" class="button button-primary">Edit Interests</a>
+        {% for interest in appuser.interests %}
+            <div class="interest-edit row">
+                <p class="six columns">{{ interest }}</p>
+            </div>
+        {% endfor %}  
+    </div>
+</div>
+
+<script>
+    const editInterests = document.getElementById('edit-interests');
+
+</script>
+
+{% endblock %} 
